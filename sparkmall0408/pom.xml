@@ -12,6 +12,9 @@
         <module>sparkmall-mock</module>
         <module>sparkmall-common</module>
         <module>sparkmall-offlin</module>
+        <module>kafka0-8</module>
+        <module>kafka0-10</module>
+        <module>sparkmall-realtime</module>
     </modules>
 
     <properties>

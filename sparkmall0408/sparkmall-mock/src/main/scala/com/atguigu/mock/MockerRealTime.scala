@@ -62,7 +62,7 @@ object MockerRealTime {
 
     val config: Properties = PropertiesUtil.load("config.properties")
     val broker: String = config.getProperty("kafka.broker.list")
-    val topic = "test"
+    val topic = "ads_log"
 
     // 创建Kafka消费者
     val kafkaProducer: KafkaProducer[String, String] = createKafkaProducer(broker)

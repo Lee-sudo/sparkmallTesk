@@ -36,6 +36,9 @@ object CategaryTop10App {
     //4.按照要求读取数据(封装成方法)，注意返回值：RDD[UserVisitAction]
     val userVisitActionRDD:RDD[UserVisitAction] = CategaryTop10AppHandler.readHiveData(spark,jsonObj)
 
+    //复用
+    userVisitActionRDD.cache()
+
     //测试
 //    userVisitActionRDD.foreach(UserVisitAction => println(s"${UserVisitAction.user_id}--${UserVisitAction.session_id}"))
 
@@ -117,10 +120,27 @@ object CategaryTop10App {
 
 
     //12.写入到mysql数据库中
-//    JdbcUtil.executeUpdate("insert into category_top10 values(?,?,?,?,?)", result)
-
     JdbcUtil.executeBatchUpdate("insert into category_top10 values(?,?,?,?,?)",result)
 
+
+    //****************需求二：热门品类中活跃 Session*****************************************
+
+    //
+    val categoryAndSessionAndSum: RDD[(String, String, Long)] = CategaryTop10AppHandler.getCategoryTop10Session(userVisitActionRDD, categoryTop10)
+
+    //转换数据格式
+    val categoryAndSessionAndSumArr: RDD[Array[Any]] = categoryAndSessionAndSum.map { case (category, session, sum) =>
+      Array(s"aaaa--${System.currentTimeMillis()}",
+        category,
+        session,
+        sum)
+    }
+
+    //拉取到Driver
+    val sessionTop10Arr: Array[Array[Any]] = categoryAndSessionAndSumArr.collect()
+
+    //需求二保存至MySQL
+    JdbcUtil.executeBatchUpdate("insert into category_session_top10 values(?,?,?,?)", sessionTop10Arr)
 
     //关闭连接
     spark.stop()

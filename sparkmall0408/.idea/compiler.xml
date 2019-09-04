@@ -6,10 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="kafka0-10" />
+        <module name="kafka0-8" />
         <module name="sparkmall-common" />
         <module name="sparkmall-mock" />
         <module name="sparkmall-offlin" />
+        <module name="sparkmall-realtime" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kafka0-10" target="1.8" />
+      <module name="kafka0-8" target="1.8" />
+      <module name="sparkmall-common" target="1.8" />
+      <module name="sparkmall-mock" target="1.8" />
+      <module name="sparkmall-offlin" target="1.8" />
+      <module name="sparkmall-realtime" target="1.8" />
+      <module name="sparkmall0408" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

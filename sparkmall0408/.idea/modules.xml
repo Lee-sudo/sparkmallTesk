@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/kafka0-10/kafka0-10.iml" filepath="$PROJECT_DIR$/kafka0-10/kafka0-10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kafka0-8/kafka0-8.iml" filepath="$PROJECT_DIR$/kafka0-8/kafka0-8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-common/sparkmall-common.iml" filepath="$PROJECT_DIR$/sparkmall-common/sparkmall-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-mock/sparkmall-mock.iml" filepath="$PROJECT_DIR$/sparkmall-mock/sparkmall-mock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-offlin/sparkmall-offlin.iml" filepath="$PROJECT_DIR$/sparkmall-offlin/sparkmall-offlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall-realtime/sparkmall-realtime.iml" filepath="$PROJECT_DIR$/sparkmall-realtime/sparkmall-realtime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sparkmall0408.iml" filepath="$PROJECT_DIR$/sparkmall0408.iml" />
+    </modules>
+  </component>
+</project>
